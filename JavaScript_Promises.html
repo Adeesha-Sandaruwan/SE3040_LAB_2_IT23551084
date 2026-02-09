@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<h2>JavaScript Promises</h2>
+
+<p id="demo"></p>
+
+<script>
+    function myMarksDisplayer(some){
+        document.getElementById("demo").innerHTML = some;
+    }
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let marks = 60;
+
+
+    if(marks <= 100 && marks >= 0) {
+        myResolve("Your mark is : " + marks);
+    } else {
+        myReject("Error !");
+    }
+});
+
+myPromise.then(
+  function(value) {myMarksDisplayer(value);},
+  function(error) {myMarksDisplayer(error);}
+);
+
+</script>
+
+</html>
